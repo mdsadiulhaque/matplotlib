@@ -64,3 +64,17 @@ pt.title('Age distribution')
 pt.xlabel('Age')
 pt.ylabel('People')
 pt.show()
+
+
+#3D Plane wire frame Graph Chart
+
+import matplotlib.pyplot as pt
+from mpl_toolkits.mplot3d import axes3d # it allow us make to 3d axis
+#figure() function create the figure
+fig = pt.figure(figsize=(10,10)) # this sets the figure size here it is 10 by 10
+ax = fig.add_subplot(111,projection='3d') # projection='3d' is used to create Axes3D object
+x,y,z = axes3d.get_test_data(0.05) #x,y,z are the axes
+#rstride is row spacing and cstride is column spacing
+#plot_wireframe() plot a wireframe
+ax.plot_wireframe(x,y,z, rstride=10 ,cstride=10)
+pt.show()
