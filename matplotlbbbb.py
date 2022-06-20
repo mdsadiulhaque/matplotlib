@@ -78,3 +78,26 @@ x,y,z = axes3d.get_test_data(0.05) #x,y,z are the axes
 #plot_wireframe() plot a wireframe
 ax.plot_wireframe(x,y,z, rstride=10 ,cstride=10)
 pt.show()
+
+
+#3D Bar Plots
+
+import matplotlib.pyplot as pt
+from mpl_toolkits.mplot3d import axes3d
+import numpy as np
+fig = pt.figure(figsize=(10,10))
+ax = fig.add_subplot(111,projection='3d')
+for c,z in zip(['r','g','b','y'],[30,20,10,0]):xs = np.arange(20) # x location of bars
+ys = np.random.rand(20) # y location of bars
+# you can provide either a single color or an array.
+# Here the first bar of each set will be cyan
+cs = [c]*len(xs)
+cs[0] = 'c'
+# bar() function is used to draw bars
+#zdir means Which direction to use as z (‘x’, ‘y’ or ‘z’) when plotting a 2D set.
+ax.bar(xs,ys,zs=z ,zdir ='y',color=cs, alpha=0.8)
+# Set the labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+pt.show()
