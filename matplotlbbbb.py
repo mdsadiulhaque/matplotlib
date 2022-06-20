@@ -15,6 +15,10 @@ pt.plot(data["rollno"],data["cgpa"],color="red",label="line graph") #plot() is u
 pt.legend() # Calling&nbsp;legend()&nbsp;with no arguments automatically fetches the legend handlesand their associated labels
 pt.show()
 
+
+#Hence the output will be as-----
+
+
 import matplotlib.pyplot as pt
 import pandas as pd
 data = pd.read_csv("cgpa.csv")
@@ -25,4 +29,22 @@ pt.bar(data["rollno"],data["cgpa"],color=["green","blue","pink","red"])
 pt.xlabel("RollNo",color="green")
 pt.ylabel("CGPA",color="blue")
 pt.title("CGPA vs Roll No",color="green")
+pt.show()
+
+#pi cheart
+
+import matplotlib.pyplot as pt
+import pandas as pd
+data = pd.read_csv("cgpa.csv")
+data = data.head(30)
+
+x=len(data[data.cgpa>=9]) #students having cgpa over 9 point
+x1=len(data[(data.cgpa>=8) & (data.cgpa<9)]) #students got over 8 point but less than 9 point
+x2=len(data[data.cgpa<8]) #students having cgpa less than 8 point
+pt.axis('equal') #for making pie chart circular,that makes major axis and minor axis equal
+#Here we need a list of values that are simply x,x1 and x2
+#colors specify a list of colors in pie chart
+#In order to specify labels we use labels attribute
+pt.pie([x,x1,x2],colors=['yellow','red','blue'],labels=['9 pointer','8 pointer','others'])
+pt.legend(title='Description') # to shown the labels as legends
 pt.show()
