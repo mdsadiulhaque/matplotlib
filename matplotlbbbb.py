@@ -10,4 +10,6 @@ pt.scatter(data["rollno"],data["cgpa"],color="blue",label="scatter")
 pt.xlabel("RollNo",color="green") #xlabel() defines the label of x-axis
 pt.ylabel("CGPA",color="blue") #ylabel() defines the label of x-axis
 pt.title("CGPA vs Roll No",color="green") #title() is used to give title of this scatter plot
+pt.plot(data["rollno"],data["cgpa"],color="red",label="line graph") #plot() is used to create line graph
+pt.legend() # Calling&nbsp;legend()&nbsp;with no arguments automatically fetches the legend handlesand their associated labels
 pt.show()
